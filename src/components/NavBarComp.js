@@ -8,7 +8,7 @@ export default class NavBarComp extends Component {
       <div>
         <Navbar bg="dark" variant={"dark"} expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Reed - clothing</Navbar.Brand>
+        <Navbar.Brand href="#home">Reed</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
