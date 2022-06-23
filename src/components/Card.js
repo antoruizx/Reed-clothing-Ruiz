@@ -1,6 +1,6 @@
 import './Card.css';
 
-function Card({props}) {
+function Card(props) {
     return (
         <div className='card'>
             <h4>{props.product}</h4>
