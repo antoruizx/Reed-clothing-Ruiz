@@ -4,14 +4,14 @@ import NavBarComp from './components/NavBarComp';
 import Body from './components/Body';
 import Welcome from './components/Welcome';
 import ItemListContainer from './components/ItemListContainer';
-
+import CartWidget from './components/CartWidget';
 
 function App() {
   return (
-    <div>
+    <div className='cuerpo'>
       <NavBarComp />
       <Welcome name="Antox"/>
-      <ItemListContainer/>
+      <ItemListContainer initial="0" stock="20"/>
     </div>
   );
 }

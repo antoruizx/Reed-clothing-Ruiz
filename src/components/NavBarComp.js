@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Container,Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CartWidget from './CartWidget';
 
 function NavBarComp() {
   return (
@@ -22,7 +23,7 @@ function NavBarComp() {
               </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-
+        <CartWidget/>
       </Container>
       </Navbar>
     </div>

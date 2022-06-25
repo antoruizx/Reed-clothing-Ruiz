@@ -1,5 +1,6 @@
 import './ItemListContainer.css';
 import { CardGroup, Card, Button, Container } from 'react-bootstrap';
+import Contador from './Contador.js';
 
 function ItemListContainer() {
     return (
@@ -8,63 +9,79 @@ function ItemListContainer() {
             <CardGroup>
                 <Card style={{width: '10rem'}}>
                     <Card.Body>
+                        <img src="./assets/img/1.jpg"></img>
                         <Card.Title>Remera</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>Card subtitle</Card.Subtitle>
+                        <Card.Subtitle className='mb-2 text-muted'>$2100</Card.Subtitle>
                         <Card.Text>
-                            lorsdfjsdhufn ijsoidfjsidf soiffjsdif noifnho sjdofij
+                            Esto es una descripción
                         </Card.Text>
-                        <Button variant='primary'>Go somewhere</Button>
+                        <Contador/>
+                        <Button variant='primary'>Agregar al carrito</Button>
+                    </Card.Body>
+                </Card>
+               
+               <Card style={{width: '10rem'}}>
+                    <Card.Body>
+                        <img src="./assets/img/1.jpg"></img>
+                        <Card.Title>Pantalon</Card.Title>
+                        <Card.Subtitle className='mb-2 text-muted'>$4500</Card.Subtitle>
+                        <Card.Text>
+                        Esto es una descripción
+                        </Card.Text>
+                        <Contador/>
+                        <Button variant='primary'>Agregar al carrito</Button>
+                    </Card.Body>
+                </Card>
+                
+                <Card style={{width: '10rem'}}>
+                    <Card.Body>
+                        <img src="./assets/img/1.jpg"></img>
+                        <Card.Title>Campera</Card.Title>
+                        <Card.Subtitle className='mb-2 text-muted'>$5600</Card.Subtitle>
+                        <Card.Text>
+                        Esto es una descripción
+                        </Card.Text>
+                        <Contador/>
+                        <Button variant='primary'>Agregar al carrito</Button>
+                    </Card.Body>
+                </Card>
+                
+                <Card style={{width: '10rem'}}>
+                    <Card.Body>
+                        <img src="./assets/img/1.jpg"></img>
+                        <Card.Title>Tops</Card.Title>
+                        <Card.Subtitle className='mb-2 text-muted'>$1600</Card.Subtitle>
+                        <Card.Text>
+                        Esto es una descripción
+                        </Card.Text>
+                        <Contador/>
+                        <Button variant='primary'>Agregar al carrito</Button>
                     </Card.Body>
                 </Card>
 
                 <Card style={{width: '10rem'}}>
                     <Card.Body>
-                        <Card.Title>Pantalon</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>Card subtitle</Card.Subtitle>
-                        <Card.Text>
-                            lorsdfjsdhufn ijsoidfjsidf soiffjsdif noifnho sjdofij
-                        </Card.Text>
-                        <Button variant='primary'>Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{width: '10rem'}}>
-                    <Card.Body>
-                        <Card.Title>Campera</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>Card subtitle</Card.Subtitle>
-                        <Card.Text>
-                            lorsdfjsdhufn ijsoidfjsidf soiffjsdif noifnho sjdofij
-                        </Card.Text>
-                        <Button variant='primary'>Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{width: '10rem'}}>
-                    <Card.Body>
-                        <Card.Title>Tops</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>Card subtitle</Card.Subtitle>
-                        <Card.Text>
-                            lorsdfjsdhufn ijsoidfjsidf soiffjsdif noifnho sjdofij
-                        </Card.Text>
-                        <Button variant='primary'>Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card style={{width: '10rem'}}>
-                    <Card.Body>
+                        <img src="./assets/img/1.jpg"></img>
                         <Card.Title>Sombrero</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>Card subtitle</Card.Subtitle>
+                        <Card.Subtitle className='mb-2 text-muted'>$3400</Card.Subtitle>
                         <Card.Text>
-                            lorsdfjsdhufn ijsoidfjsidf soiffjsdif noifnho sjdofij
+                        Esto es una descripción
                         </Card.Text>
-                        <Button variant='primary'>Go somewhere</Button>
+                        <Contador/>
+                        <Button variant='primary'>Agregar al carrito</Button>
                     </Card.Body>
                 </Card>
+
                 <Card style={{width: '10rem'}}>
                     <Card.Body>
+                        <img src="./assets/img/1.jpg"></img>
                         <Card.Title>Gafas</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>Card subtitle</Card.Subtitle>
+                        <Card.Subtitle className='mb-2 text-muted'>$2300</Card.Subtitle>
                         <Card.Text>
-                            lorsdfjsdhufn ijsoidfjsidf soiffjsdif noifnho sjdofij
+                        Esto es una descripción
                         </Card.Text>
-                        <Button variant='primary'>Go somewhere</Button>
+                        <Contador/>
+                        <Button variant='primary'>Agregar al carrito</Button>
                     </Card.Body>
                 </Card>
             </CardGroup>
