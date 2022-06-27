@@ -1,8 +1,8 @@
-import './Contador.css';
+import './ItemCount.css';
 import { useState } from "react";
 import { Button, Container, Row, Col } from 'react-bootstrap';
 
-function Contador ({ stock=5, initial=1 }) { 
+function ItemCount ({ stock=5, initial=1 }) { 
     const [num, setNum] = useState(initial);
     const [disableBotonMas, setDisableBotonMas] = useState(false);
     const [disableBotonMenos, setDisableBotonMenos] = useState(true);
@@ -28,7 +28,7 @@ function Contador ({ stock=5, initial=1 }) {
             <Container fluid>
                 <Row xs="auto" md="auto" className="rounded-3 justify-content-center">
                     <Col><Button variant="outline-primary" size="sm" onClick={restar} disabled={disableBotonMenos}> - </Button></Col>
-                    <Col><p className="contador">{num}</p></Col>
+                    <Col><p className="ItemCount">{num}</p></Col>
                     <Col><Button variant="outline-primary" size="sm" onClick={sumar} disabled={disableBotonMas}> + </Button></Col>
                 </Row>
             </Container>
@@ -36,4 +36,4 @@ function Contador ({ stock=5, initial=1 }) {
     )
 }
 
-export default Contador;
+export default ItemCount;

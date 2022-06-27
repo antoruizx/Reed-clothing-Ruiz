@@ -1,6 +1,6 @@
 import './ItemListContainer.css';
 import { CardGroup, Card, Button, Container } from 'react-bootstrap';
-import Contador from './Contador.js';
+import ItemCount from './ItemCount.js';
 
 function ItemListContainer() {
     return (
@@ -15,7 +15,7 @@ function ItemListContainer() {
                         <Card.Text>
                             Esto es una descripción
                         </Card.Text>
-                        <Contador/>
+                        <ItemCount/>
                         <Button variant='primary'>Agregar al carrito</Button>
                     </Card.Body>
                 </Card>
@@ -28,7 +28,7 @@ function ItemListContainer() {
                         <Card.Text>
                         Esto es una descripción
                         </Card.Text>
-                        <Contador/>
+                        <ItemCount/>
                         <Button variant='primary'>Agregar al carrito</Button>
                     </Card.Body>
                 </Card>
@@ -41,7 +41,7 @@ function ItemListContainer() {
                         <Card.Text>
                         Esto es una descripción
                         </Card.Text>
-                        <Contador/>
+                        <ItemCount/>
                         <Button variant='primary'>Agregar al carrito</Button>
                     </Card.Body>
                 </Card>
@@ -54,7 +54,7 @@ function ItemListContainer() {
                         <Card.Text>
                         Esto es una descripción
                         </Card.Text>
-                        <Contador/>
+                        <ItemCount/>
                         <Button variant='primary'>Agregar al carrito</Button>
                     </Card.Body>
                 </Card>
@@ -67,7 +67,7 @@ function ItemListContainer() {
                         <Card.Text>
                         Esto es una descripción
                         </Card.Text>
-                        <Contador/>
+                        <ItemCount/>
                         <Button variant='primary'>Agregar al carrito</Button>
                     </Card.Body>
                 </Card>
@@ -80,7 +80,7 @@ function ItemListContainer() {
                         <Card.Text>
                         Esto es una descripción
                         </Card.Text>
-                        <Contador/>
+                        <ItemCount/>
                         <Button variant='primary'>Agregar al carrito</Button>
                     </Card.Body>
                 </Card>
