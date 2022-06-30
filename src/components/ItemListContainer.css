@@ -1,0 +1,11 @@
+/* .cards-container {
+    margin: 2rem;
+}
+
+.cards-container__div {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 20px; 
+    grid-template-columns: auto auto auto auto;
+    flex-wrap: wrap;
+} */

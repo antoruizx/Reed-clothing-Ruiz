@@ -1,12 +1,20 @@
+import { Card, CardImg, Button} from 'react-bootstrap';
 import './Card.css';
+import ItemCount from './ItemCount';
 
-function Card(props) {
+function Cards(props) {
     return (
-        <div className='card'>
-            <h4>{props.product}</h4>
-            <p>{props.price}</p>
-        </div>
+        <Card style={{ width:'18rem' }}>
+            <CardImg variant="top" src={props.img}/>
+            <Card.Body>
+                <Card.Title>{props.name}</Card.Title>
+                <Card.Text>{props.description}</Card.Text>
+                {/* <Item /> */}
+                <Button variant="primary">{props.price}</Button>
+                <ItemCount initial={1} stock={5}/>
+            </Card.Body>
+        </Card>
     );
 }
 
-export default Card;
+export default Cards;

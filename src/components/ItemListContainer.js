@@ -1,17 +1,19 @@
 import './ItemListContainer.css';
 import { CardGroup, Card, Button, Container } from 'react-bootstrap';
 import ItemCount from './ItemCount.js';
+import ItemList from "./ItemList";
 
-function ItemListContainer() {
+function ItemListContainer({title}) {
     return (
-        <div>
-            <Container>
+        <section>
+            <div classsName="cards-container">
+            <Container className="cards-container__div">
             <CardGroup>
                 <Card style={{width: '10rem'}}>
                     <Card.Body>
                         <img src="./assets/img/1.jpg"></img>
                         <Card.Title>Remera</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>$2100</Card.Subtitle>
+                        <Card.Subtitle className='mb-2 text-muted'>$2000</Card.Subtitle>
                         <Card.Text>
                             Esto es una descripción
                         </Card.Text>
@@ -88,6 +90,8 @@ function ItemListContainer() {
             </Container>
             
         </div>
+        </section>
+        
     
     );
 }
