@@ -1,27 +1,18 @@
-import { useEffect, useState }  from "react";
-import Card from './Card';
+import {Container, Row} from 'react-bootstrap';
+import Item from './Item';
+import './ItemList.css';
 
+function ItemlList({productos}) {
 
-function ItemList() {
-    const [info, setProducts] = useState([])
-
-    useEffect( () => {
-        setTimeout (
-            () => {
-                fetch('products.json')
-                    .then((resp) => resp.json())
-                    .then((data) => setProducts(data))
-            }, 3000
-        )
-    }, [] );
-
-    console.log(info)
-
-    return(
-        <div>
-            {info && info.map(i => <Card name={i.name} price={i.price} />)}
-        </div>
-    );
+    return (
+        <Container fluid="md">
+            <Row className="justify-content-md-center">
+                {productos && productos.map((producto) => (
+                        <Item key={producto.id} producto={producto}/>
+                ))}
+            </Row>
+        </Container>
+          );
 }
 
-export default ItemList;
+export default ItemlList;

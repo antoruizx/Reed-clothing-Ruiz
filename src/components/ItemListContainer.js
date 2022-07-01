@@ -1,14 +1,37 @@
+import { useState, useEffect } from "react";
 import './ItemListContainer.css';
 import { CardGroup, Card, Button, Container } from 'react-bootstrap';
 import ItemCount from './ItemCount.js';
 import ItemList from "./ItemList";
+import Item from "./Item"
 
-function ItemListContainer({title}) {
+function ItemListContainer() {
+    const [products, setProducts] = useState([])
+
+    useEffect( () => {
+        setTimeout (
+            () => {
+                fetch('public/data.json')
+                    .then(resp => resp.json())
+                    .then(data => setProducts(data))
+            }, 3000)
+    });
+
     return (
         <section>
             <div classsName="cards-container">
             <Container className="cards-container__div">
-            <CardGroup>
+                <div>
+                    <h1>Catalogo de productos</h1>
+                    <a href="/">Ver más</a>
+                </div>
+                <div>
+                    {products.map(
+                        i => <Item name={i.name} description={i.description} stock={i.stock} price={i.price} /> 
+                    )}
+                </div>
+               
+            {/* <CardGroup>
                 <Card style={{width: '10rem'}}>
                     <Card.Body>
                         <img src="./assets/img/1.jpg"></img>
@@ -86,7 +109,7 @@ function ItemListContainer({title}) {
                         <Button variant='primary'>Agregar al carrito</Button>
                     </Card.Body>
                 </Card>
-            </CardGroup>
+            </CardGroup> */}
             </Container>
             
         </div>

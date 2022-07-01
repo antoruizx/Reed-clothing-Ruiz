@@ -2,92 +2,100 @@
     "name": "Remera Electra",
     "stock": 5,
     "price": 3500,
-    "description": "Remera Oversize ",
+    "descuento": 0.8,
+    "description": "Remera batik psicodelica",
     "id": 1,
     "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/866/661/products/remeron-nasa-blanco-11-e08870a77f861c19c216319125280817-480-0.jpg",
-    "categoria": "Unisex"
+    "category": "Unisex"
 },
 {
-    "name": "Remera Electra",
-    "stock": 5,
-    "price": 3500,
-    "description": "Remera Oversize ",
+    "name": "Pantalon Started",
+    "stock": 4,
+    "price": 6000,
+    "descuento": 0.8,
+    "description": "Pantalon estilo Mom con roturas",
     "id": 2,
     "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/866/661/products/remeron-nasa-blanco-11-e08870a77f861c19c216319125280817-480-0.jpg",
-    "categoria": "Unisex"
+    "category": "Unisex"
 },
 {
-    "name": "Remera Electra",
+    "name": "Campera Spicy",
     "stock": 5,
-    "price": 3500,
-    "description": "Remera Oversize ",
+    "price": 9500,
+    "descuento": 0.8,
+    "description": "Campera puffer con corderito",
     "id": 3,
     "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/866/661/products/remeron-nasa-blanco-11-e08870a77f861c19c216319125280817-480-0.jpg",
-    "categoria": "Unisex"
+    "category": "Unisex"
 },
 {
-    "name": "Remera Electra",
+    "name": "Campera Sweets dreams",
     "stock": 5,
-    "price": 3500,
-    "description": "Remera Oversize ",
+    "price": 8200,
+    "descuento": 0.8,
+    "description": "Campera estilo leñador con corderito",
     "id": 4,
     "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/866/661/products/remeron-nasa-blanco-11-e08870a77f861c19c216319125280817-480-0.jpg",
-    "categoria": "Unisex"
+    "category": "Unisex"
 },
 {
     "name": "Remera Electra",
     "stock": 5,
     "price": 3500,
+    "descuento": 0.8,
     "description": "Remera Oversize ",
     "id": 5,
     "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/866/661/products/remeron-nasa-blanco-11-e08870a77f861c19c216319125280817-480-0.jpg",
-    "categoria": "Unisex"
+    "category": "Unisex"
 },
 {
     "name": "Remera Electra",
     "stock": 5,
     "price": 3500,
+    "descuento": 0.8,
     "description": "Remera Oversize ",
     "id": 6,
     "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/866/661/products/remeron-nasa-blanco-11-e08870a77f861c19c216319125280817-480-0.jpg",
-    "categoria": "Unisex"
+    "category": "Unisex"
 },
 {
     "name": "Remera Electra",
     "stock": 5,
     "price": 3500,
+    "descuento": 0.8,
     "description": "Remera Oversize ",
     "id": 7,
     "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/866/661/products/remeron-nasa-blanco-11-e08870a77f861c19c216319125280817-480-0.jpg",
-    "categoria": "Unisex"
+    "category": "Unisex"
 },
 {
     "name": "Remera Electra",
     "stock": 5,
     "price": 3500,
+    "descuento": 0.8,
     "description": "Remera Oversize ",
     "id": 8,
     "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/866/661/products/remeron-nasa-blanco-11-e08870a77f861c19c216319125280817-480-0.jpg",
-    "categoria": "Unisex"
+    "category": "Unisex"
 },
 {
     "name": "Remera Electra",
     "stock": 5,
     "price": 3500,
+    "descuento": 0.8,
     "description": "Remera Oversize ",
     "id": 9,
     "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/866/661/products/remeron-nasa-blanco-11-e08870a77f861c19c216319125280817-480-0.jpg",
-    "categoria": "Unisex"
+    "category": "Unisex"
 },
 {
     "product": "Remera Electra",
     "stock": 5,
     "price": 3500,
+    "descuento": 0.8,
     "description": "Remera Oversize ",
     "id": 10,
     "img": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/866/661/products/remeron-nasa-blanco-11-e08870a77f861c19c216319125280817-480-0.jpg",
-    "categoria": "Unisex"
+    "category": "Unisex"
 }
-
-
 ]
