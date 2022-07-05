@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-import logo from './holis.png'
+// import logo from '/src/holis.png';
 import ItemCount from './ItemCount'
 import './Item.css'
 
@@ -13,7 +13,7 @@ function Item({producto}) {
             className="mb-2 mx-2"
             >
                 <Card.Header>
-                    <div><Card.Img variant="top" src={logo} className="imagenCard"/></div>
+                    <div><Card.Img variant="top" className="imagenCard"/></div>
                 </Card.Header>
                 <Card.Body>
                     <Card.Title>{producto.nombre}</Card.Title>
