@@ -1,6 +1,6 @@
 import { Card, CardImg, Button} from 'react-bootstrap';
 import './Card.css';
-import ItemCount from './ItemCount';
+import ItemCount from '../ItemCount/ItemCount';
 
 function Cards(props) {
     return (
@@ -10,8 +10,8 @@ function Cards(props) {
                 <CardImg variant="top" src='./Logo.png'/>
                 <Card.Body>
                     <Card.Title>Producto{props.name}</Card.Title>
-                    <Card.Text>{props.description}Esto es una descripción</Card.Text>
-                    <Card.Text>{props.price}</Card.Text>
+                    <Card.Text>Descripcion{props.description}</Card.Text>
+                    <Card.Text>Precio: ${props.price}</Card.Text>
                     <ItemCount initial={1} stock={5}/>
                     {/* <Item /> */}
                     <Button variant="primary">Agregar al carrito</Button>

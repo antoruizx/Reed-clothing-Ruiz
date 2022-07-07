@@ -33,6 +33,7 @@ function ItemCount ({ stock=5, initial=1 }) {
             <Container fluid>
                 <Row xs="auto" md="auto" className="rounded-3 justify-content-center">
                     <p> {stock} unidades disponibles!</p>
+                    <hr/>
                     <Col><Button variant="outline-primary" size="sm" onClick={restar} disabled={disableBotonMenos}> - </Button></Col>
                     <Col><p className="ItemCount">{num}</p></Col>
                     <Col><Button variant="outline-primary" size="sm" onClick={sumar} disabled={disableBotonMas}> + </Button></Col>

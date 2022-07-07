@@ -1,6 +1,5 @@
 import Card from 'react-bootstrap/Card';
-// import logo from '/src/holis.png';
-import ItemCount from './ItemCount'
+import ItemCount from '../ItemCount/ItemCount'
 import './Item.css'
 
 function Item({producto}) {

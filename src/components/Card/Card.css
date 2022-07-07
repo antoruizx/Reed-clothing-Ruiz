@@ -1,7 +1,7 @@
 .cards-container {
     margin: 2rem;
     flex-wrap: wrap;
-    grid-template-columns: auto auto auto auto;
+    /* grid-template-columns: auto auto auto auto; */
 }
 
 .cards-container__div {

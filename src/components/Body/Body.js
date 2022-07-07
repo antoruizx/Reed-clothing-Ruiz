@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Body.css';
-import Cards from './Card';
-import Item from './Item'
+import Cards from '../Card/Card'
+import Item from '../Item/Item';
 
 function Body() {
 

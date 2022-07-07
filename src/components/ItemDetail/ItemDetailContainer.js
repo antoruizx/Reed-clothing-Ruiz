@@ -34,7 +34,7 @@ function ItemDetailContainer () {
             <Container fluid>
                 <Row xs="auto" md="auto" className="p-3 bg-light rounded-3 justify-content-center">
                     <Col>
-                        {infoLoaded && <ItemDetail productDetail={productFetch}/>}
+                        {productFetch.length !== 0 && <ItemDetail productDetail={productFetch}/>}
                     </Col>
                 </Row>
             </Container>

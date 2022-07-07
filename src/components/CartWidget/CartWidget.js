@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react';
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import Welcome from '../Welcome/Welcome';
 
 function CartWidget () {
     return (

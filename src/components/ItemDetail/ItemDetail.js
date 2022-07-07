@@ -1,4 +1,6 @@
-
+import { useState } from 'react';
+import Card from '../Card/Card';
+import ItemCount  from '../ItemCount/ItemCount';
 
 function ItemDetail ({props, initial, onAdd, unit}) {
     const productFetch = props.productDetail[0];
@@ -26,9 +28,9 @@ function ItemDetail ({props, initial, onAdd, unit}) {
     return (
         <>
             <Card key={productFetch.id} className="text-center" style={{ width:'18rem' }}>
-                <CardImg variant="top" src={require(`../img/1.png`)}/>
+                <CardImg variant="top" src={require(`../assets/img/2.jpg`)}/>
                 <Card.Body>
-                    <Card.Title>Producto{props.name}</Card.Title>
+                    <Card.Title>Produco{props.name}</Card.Title>
                     <Card.Text>{props.description}Esto es una descripción</Card.Text>
                     <Card.Text>{props.price}</Card.Text>
                     <ItemCount initial={1} stock={5}/>

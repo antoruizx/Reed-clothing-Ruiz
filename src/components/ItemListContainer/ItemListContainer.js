@@ -1,9 +1,11 @@
+
 import { useState, useEffect } from "react";
 import './ItemListContainer.css';
 import { CardGroup, Card, Button, Container } from 'react-bootstrap';
-import ItemCount from './ItemCount.js';
-import ItemList from "./ItemList";
-import Item from "./Item"
+// import ItemCount from '../ItemCount/ItemCount';
+// import ItemList from "../ItemList/ItemList";
+import Item from "../Item/Item"
+import Cards from "../Card/Card";
 
 function ItemListContainer() {
     const [products, setProducts] = useState([])
@@ -11,10 +13,11 @@ function ItemListContainer() {
     useEffect( () => {
         setTimeout (
             () => {
-                fetch('public/data.json')
+                fetch('data.json')
                     .then(resp => resp.json())
                     .then(data => setProducts(data))
             }, 3000)
+            
     });
 
     return (
@@ -27,7 +30,7 @@ function ItemListContainer() {
                 </div>
                 <div>
                     {products.map(
-                        i => <Item name={i.name} description={i.description} stock={i.stock} price={i.price} /> 
+                        i => <Card name={i.name} description={i.description} stock={i.stock} price={i.price} /> 
                     )}
                 </div>
                

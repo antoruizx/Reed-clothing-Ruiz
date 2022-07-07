@@ -1,21 +1,27 @@
-import Item from "./components/Item"
 import './App.css';
-import NavBarComp from './components/NavBarComp';
-import Body from './components/Body';
-import Welcome from './components/Welcome';
-import ItemListContainer from './components/ItemListContainer';
-import CartWidget from './components/CartWidget';
-// import Card from "./components/Card"
+import NavBarComp from './components/NavBar/NavBarComp';
+import Body from './components/Body/Body';
+import Home from './components/Home/Home';
+import Products from './components/Products/Products';
+import { Routes, Route } from "react-router-dom";
+import Container from "./components/Container/Container";
+import Detail from "./components/Detail/Detail"
+// import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
   return (
     <div className='cuerpo'>
       <NavBarComp />
-      {/* <Welcome name="Antox"/> */}
-      <Body>
-      {/* <ItemListContainer initial="1" stock={6}/> */}
-      </Body>
-      {/* <Card/> */}
+      <hr></hr>
+      <Routes>
+        <Route exact path="/" element={<Container />}></Route>
+        <Route exact path="/home" element={<Home />}></Route>
+        <Route exact path="/products" element={<Products />}></Route>
+        <Route exact path="/producto/:characterId" element={<Detail />}></Route>
+        {/* <Route path="*" element={<NotFound />}></Route> */}
+      </Routes>
+      <hr></hr>
+      <Body />
     </div>
   );
 }

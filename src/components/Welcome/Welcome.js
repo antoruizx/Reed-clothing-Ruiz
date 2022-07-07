@@ -2,8 +2,8 @@ import './Welcome.css';
 
 function Welcome({ name }) {
     return (
-        <h2>Bienvenido a nuestra pagina {name}</h2>
+        <h4>Bienvenido a nuestra pagina {name}!   </h4>
     );
   }
 
-  export default Welcome;
+export default Welcome;
