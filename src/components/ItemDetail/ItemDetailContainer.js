@@ -1,45 +1,24 @@
-import { React, useEffect, useState } from 'react';
-import {Container, Row, Col} from 'react-bootstrap';
-import './ItemDetailContainer.css'
-import ItemDetail from './ItemDetail';
+import React, { useState, useEffect } from 'react';
+import { ItemDetail } from './ItemDetail';
+import { data } from '../data/data';
 
-function ItemDetailContainer () {
-
-    const [productFetch, setProductFetch, setInfoLoaded] = useState([])
+export const ItemDetailContainer = () => {
+    const [product, setProduct] = useState({});
 
     useEffect ( () => {
         //Le doy tiempo de 3000ms
-        setTimeout ( 
-            () => {
-                // Leo el json
-            fetch('data.json', 
-                {
-                    headers : 
-                    {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                    }
-                }
-            )
-                .then(resp => resp.json()) //da la resp
-                .then(products => {
-                    setProductFetch(products.filter( item => item.id === 1))
-                    setInfoLoaded(true)})
-                // .catch(err => console.log(err))
-        }, 3000)
-    },[]);
-    
-    return (
-        <>
-            <Container fluid>
-                <Row xs="auto" md="auto" className="p-3 bg-light rounded-3 justify-content-center">
-                    <Col>
-                        {productFetch.length !== 0 && <ItemDetail productDetail={productFetch}/>}
-                    </Col>
-                </Row>
-            </Container>
-        </>
-    );
-}
+        const getItems = new Promise((resolve) => {
+            setTimeout(() => {
+                const myData = data.find((item) => item.id === '3');
 
-export default ItemDetailContainer;
+                resolve(myData);
+            }, 1000);
+            });
+            
+            getItems.then((res) => {
+                setProduct(res);
+            });
+    }, []);
+
+    return <ItemDetail {...product} />;
+};

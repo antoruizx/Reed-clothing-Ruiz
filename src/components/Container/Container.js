@@ -1,7 +1,6 @@
 import { useState } from "react";
 import '../Container/Container.css';
 import CardList from "../CardList/CardList";
-import { Card, CardImg, Button} from 'react-bootstrap';
 
 function Container () {
     const [cardsFetch, setCardsFetch] = useState([])
@@ -14,7 +13,7 @@ function Container () {
 
     return(
         <div>
-            <Button variant="primary" onClick={fetchCards}>Ver productos</Button>
+            <button onClick={fetchCards}>Ver productos</button>
             <CardList cards={cardsFetch} />
         </div>
     )

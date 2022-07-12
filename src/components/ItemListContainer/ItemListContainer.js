@@ -1,125 +1,36 @@
+import React, { useState, useEffect, useParams } from 'react';
+import { ItemList } from '../ItemList/ItemList';
+import { data } from '../data/data';
 
-import { useState, useEffect } from "react";
-import './ItemListContainer.css';
-import { CardGroup, Card, Button, Container } from 'react-bootstrap';
-// import ItemCount from '../ItemCount/ItemCount';
-// import ItemList from "../ItemList/ItemList";
-import Item from "../Item/Item"
-import Cards from "../Card/Card";
-
-function ItemListContainer() {
-    const [products, setProducts] = useState([])
+export const ItemListContainer = ({ greeting }) => {
+    const [items, setItems] = useState([]);
+    const [isLoading, setIsLoading]= useState(true);
+    const { idcategoria } = useParams();
 
     useEffect( () => {
-        setTimeout (
-            () => {
-                fetch('data.json')
-                    .then(resp => resp.json())
-                    .then(data => setProducts(data))
-            }, 3000)
-            
-    });
-
-    return (
-        <section>
-            <div classsName="cards-container">
-            <Container className="cards-container__div">
-                <div>
-                    <h1>Catalogo de productos</h1>
-                    <a href="/">Ver más</a>
-                </div>
-                <div>
-                    {products.map(
-                        i => <Card name={i.name} description={i.description} stock={i.stock} price={i.price} /> 
-                    )}
-                </div>
-               
-            {/* <CardGroup>
-                <Card style={{width: '10rem'}}>
-                    <Card.Body>
-                        <img src="./assets/img/1.jpg"></img>
-                        <Card.Title>Remera</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>$2000</Card.Subtitle>
-                        <Card.Text>
-                            Esto es una descripción
-                        </Card.Text>
-                        <ItemCount/>
-                        <Button variant='primary'>Agregar al carrito</Button>
-                    </Card.Body>
-                </Card>
-               
-               <Card style={{width: '10rem'}}>
-                    <Card.Body>
-                        <img src="./assets/img/1.jpg"></img>
-                        <Card.Title>Pantalon</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>$4500</Card.Subtitle>
-                        <Card.Text>
-                        Esto es una descripción
-                        </Card.Text>
-                        <ItemCount/>
-                        <Button variant='primary'>Agregar al carrito</Button>
-                    </Card.Body>
-                </Card>
+        const getItems = new Promise((resolve) => {
+            setTimeout ( () => {
+                const myData = idcategoria 
+                ? data.filter((item) => item.category === idcategoria)
+                : data;
                 
-                <Card style={{width: '10rem'}}>
-                    <Card.Body>
-                        <img src="./assets/img/1.jpg"></img>
-                        <Card.Title>Campera</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>$5600</Card.Subtitle>
-                        <Card.Text>
-                        Esto es una descripción
-                        </Card.Text>
-                        <ItemCount/>
-                        <Button variant='primary'>Agregar al carrito</Button>
-                    </Card.Body>
-                </Card>
-                
-                <Card style={{width: '10rem'}}>
-                    <Card.Body>
-                        <img src="./assets/img/1.jpg"></img>
-                        <Card.Title>Tops</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>$1600</Card.Subtitle>
-                        <Card.Text>
-                        Esto es una descripción
-                        </Card.Text>
-                        <ItemCount/>
-                        <Button variant='primary'>Agregar al carrito</Button>
-                    </Card.Body>
-                </Card>
+            resolve(myData);
+            }, 1000);
+        });
 
-                <Card style={{width: '10rem'}}>
-                    <Card.Body>
-                        <img src="./assets/img/1.jpg"></img>
-                        <Card.Title>Sombrero</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>$3400</Card.Subtitle>
-                        <Card.Text>
-                        Esto es una descripción
-                        </Card.Text>
-                        <ItemCount/>
-                        <Button variant='primary'>Agregar al carrito</Button>
-                    </Card.Body>
-                </Card>
-
-                <Card style={{width: '10rem'}}>
-                    <Card.Body>
-                        <img src="./assets/img/1.jpg"></img>
-                        <Card.Title>Gafas</Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>$2300</Card.Subtitle>
-                        <Card.Text>
-                        Esto es una descripción
-                        </Card.Text>
-                        <ItemCount/>
-                        <Button variant='primary'>Agregar al carrito</Button>
-                    </Card.Body>
-                </Card>
-            </CardGroup> */}
-            </Container>
-            
-        </div>
-        </section>
-        
+        getItems
+        .then((res) => {
+            setItems(res);
+        })
+        .finally(() => setIsLoading (false));
+    }, [idcategoria]);
     
+    return isLoading ? (
+        <h1>Cargando...</h1>
+        ) : (
+            <div>
+                <h3 style={{ textAlign: 'center' }}>{greeting}</h3>
+                <ItemList items={items} />
+            </div>
     );
 }
-
-export default ItemListContainer;

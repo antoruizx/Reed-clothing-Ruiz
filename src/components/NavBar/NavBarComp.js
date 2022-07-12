@@ -3,7 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from '../CartWidget/CartWidget';
 import Welcome from '../Welcome/Welcome';
 
-function NavBarComp() {
+export const NavBarComp = () => {
+  // const categories = [
+  //   { id: 'aabbcc', address: '/', text: 'Todos los productos'},
+  //   { id: 'ddeeff', address: '/category/remeras', text: 'Remeras'},
+  //   { id: 'gghhii', address: '/category/buzo', text: 'Pantalones'},
+  //   { id: 'jjkkll', address: '/category/abrigos', text: 'Abrigos'},
+  // ]
   return (
     <header className='header'>
       <Navbar bg="dark" variant={"dark"} expand="lg">

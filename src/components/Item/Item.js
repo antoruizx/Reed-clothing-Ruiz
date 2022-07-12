@@ -1,30 +1,14 @@
-import Card from 'react-bootstrap/Card';
-import ItemCount from '../ItemCount/ItemCount'
-import './Item.css'
+import React from 'react';
 
-function Item({producto}) {
+export const Item = ({ id, name, category, image, price }) => {
     return (
-        <Card
-            bg={'primary'}
-            key={producto.id}
-            text={'white'}
-            style={{ width: '15rem' }}
-            className="mb-2 mx-2"
-            >
-                <Card.Header>
-                    <div><Card.Img variant="top" className="imagenCard"/></div>
-                </Card.Header>
-                <Card.Body>
-                    <Card.Title>{producto.nombre}</Card.Title>
-                    <Card.Text>{producto.descripcion}</Card.Text>
-                    <Card.Text>$ {producto.precio}</Card.Text>
-                    <Card.Text>Stock: {producto.stock}</Card.Text>
-                </Card.Body>
-                <Card.Footer>
-                    <ItemCount stock={producto.stock} initial={producto.initial}/>
-                </Card.Footer>
-        </Card>
+        <div className={`item_card ${category}-category`}>
+            <span>{name}</span>
+            <span>Categoría: {category}</span>
+            <span>
+                {/* <img src={img} alt={name} className={'small-img'} /> */}
+            </span>
+            <span>${price}</span>
+        </div>
       );
-}
-
-export default Item;
+};
