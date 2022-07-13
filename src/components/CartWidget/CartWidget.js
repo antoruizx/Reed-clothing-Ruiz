@@ -1,4 +1,3 @@
-
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -8,7 +7,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 function CartWidget () {
     return (
-        <div>
+        <div className='icons'>
             <a href="#" className='icons'>
                 <FontAwesomeIcon icon={faCartShopping}/>
             </a>

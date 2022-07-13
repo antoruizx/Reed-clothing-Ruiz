@@ -25,21 +25,21 @@ export const NavBarComp = () => {
     //       );
     //   })}
     // </section>
-    <header className='header'>
+    <section className='header'>
       <Navbar bg="dark" variant={"dark"} expand="lg">
       <Container>
-        <Navbar.Brand href="/home">Reed</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/home">Reed</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={NavLink} activeClassName='active' to="/inicio">Inicio</Nav.Link>
-            <Nav.Link activeClassName='active' href="/conocenos">Conócenos</Nav.Link>
+            <Nav.Link activeClassName='active' to="/conocenos">Conócenos</Nav.Link>
               <NavDropdown activeClassName='active' title="Nuestros productos" id="basic-nav-dropdown">
                 <NavDropdown.Item as={Link} to="/unisex">Unisex</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/femenino">Femenino</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/masculino">Masculino</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/vermas">Ver más</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/vermas">Ver más</NavDropdown.Item>
               </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -48,6 +48,6 @@ export const NavBarComp = () => {
         <CartWidget/>
       </Container>
       </Navbar>
-    </header>
+    </section>
   );
 };
