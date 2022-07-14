@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useParams } from 'react';
-import { ItemList } from '../ItemList/ItemList';
-import { data } from '../data/data';
+import Cards from '../ItemList/ItemList2';
+import ProductsList from '../Products/ProductsList';
 
-export const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = ({ greeting }) => {
     const [items, setItems] = useState([]);
     const [isLoading, setIsLoading]= useState(true);
     const { idcategoria } = useParams();
@@ -11,8 +11,8 @@ export const ItemListContainer = ({ greeting }) => {
         const getItems = new Promise((resolve) => {
             setTimeout ( () => {
                 const myData = idcategoria 
-                ? data.filter((item) => item.category === idcategoria)
-                : data;
+                ? ProductsList.filter((item) => item.category === idcategoria)
+                : ProductsList;
                 
             resolve(myData);
             }, 1000);
@@ -30,7 +30,9 @@ export const ItemListContainer = ({ greeting }) => {
         ) : (
             <div>
                 <h3 style={{ textAlign: 'center' }}>{greeting}</h3>
-                <ItemList items={items} />
+                <Cards items={items} />
             </div>
     );
-}
+};
+
+export default ItemListContainer;

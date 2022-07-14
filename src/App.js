@@ -1,27 +1,17 @@
 import React from "react";
 import "./App.css";
 
-import { NavBarComp } from "./components/NavBar/NavBarComp";
-import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
-import { ItemDetailContainer } from "./components/ItemDetail/ItemDetailContainer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Card2 from "./components/Card2/CardUI";
-// import Cards from "./components/Card2/Cards";
+import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
+
+// import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
+// import { ItemDetailContainer } from "./components/ItemDetail/ItemDetailContainer";
+// import ProductsList from "./components/Products/ProductsList";
+// import NavBarComp from "./components/NavBar/NavBarComp";
 
 function App() {
   return (
     <BrowserRouter>
-      <NavBarComp />
 
-      <Routes>
-        <Route path="/" element={<ItemListContainer greeting={'HOME'} />} />
-        <Route
-          path="/category/:idcategoria"
-          element={<ItemListContainer greetig={'FILTRADO'} />}
-        />
-        <Route path="/item/:iditem" element={<ItemDetailContainer />} />
-        <Route path="*" element={<h1>No se encontro la ruta</h1>} />
-      </Routes>
     </BrowserRouter>
   );
 }

@@ -4,7 +4,7 @@ import CartWidget from '../CartWidget/CartWidget';
 import Welcome from '../Welcome/Welcome';
 import { Link, NavLink } from 'react';
 
-export const NavBarComp = () => {
+const NavBarComp = () => {
   // const categories = [
   //   { id: 'aabbcc', address: '/', text: 'Todos los productos'},
   //   { id: 'ddeeff', address: '/category/remeras', text: 'Remeras'},
@@ -26,9 +26,11 @@ export const NavBarComp = () => {
     //   })}
     // </section>
     <section className='header'>
-      <Navbar bg="dark" variant={"dark"} expand="lg">
-      <Container>
-        <Navbar.Brand as={Link} to="/home">Reed</Navbar.Brand>
+      <Navbar  bg="dark" variant={"dark"} expand="lg">
+      <Container >
+        <Navbar.Brand as={Link} to="/home">
+        <img src='Logo2.png' alt='logo'></img>
+          </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -51,3 +53,5 @@ export const NavBarComp = () => {
     </section>
   );
 };
+
+export default NavBarComp;
