@@ -1,22 +1,21 @@
-import { useState } from "react";
-import '../Container/Container.css';
-import CardList from "../CardList/CardList";
+// import { useState } from "react";
+// import '../Container/Container.css';
+// import ItemList from "../ItemList/ItemList2";
+// import { Button } from "react-bootstrap";
 
-function Container () {
-    const [cardsFetch, setCardsFetch] = useState([])
+// export function Container () {
+//     const [cardsFetch, setCardsFetch] = useState([])
 
-    const fetchCards = () => {
-        fetch('data.json')
-        .then((response) => response.json())
-        .then((data) => setCardsFetch(data))
-    }
+//     const fetchCards = () => {
+//         fetch('./Products/ProductList.js')
+//         .then((response) => response.json())
+//         .then((data) => setCardsFetch(data))
+//     }
 
-    return(
-        <div>
-            <button onClick={fetchCards}>Ver productos</button>
-            <CardList cards={cardsFetch} />
-        </div>
-    )
-}
-
-export default Container;
+//     return(
+//         <div>
+//             <Button variant="primary" onClick={fetchCards}>Ver detalles</Button>
+//             <ItemList2 cards={cardsFetch} />
+//         </div>
+//     );
+// };

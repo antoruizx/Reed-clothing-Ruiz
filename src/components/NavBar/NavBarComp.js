@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from '../CartWidget/CartWidget';
 import Welcome from '../Welcome/Welcome';
 import { Link, NavLink } from 'react';
+import logo from '../assets/img/Logo2.png';
 
 const NavBarComp = () => {
   // const categories = [
@@ -29,8 +30,8 @@ const NavBarComp = () => {
       <Navbar  bg="dark" variant={"dark"} expand="lg">
       <Container >
         <Navbar.Brand as={Link} to="/home">
-        <img src='Logo2.png' alt='logo'></img>
-          </Navbar.Brand>
+        <img src={logo} alt="logo" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

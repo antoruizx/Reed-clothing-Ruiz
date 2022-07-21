@@ -1,10 +1,10 @@
 import './ItemCount.css';
 import { useState } from "react";
 import { Button, Container, Row, Col } from 'react-bootstrap';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 
-function ItemCount ({ stock=5, initial=1 }) { 
+export function ItemCount ({ stock=5, initial=1 }) { 
     const [num, setNum] = useState(initial);
     const [disableBotonMas, setDisableBotonMas] = useState(false);
     const [disableBotonMenos, setDisableBotonMenos] = useState(true);
@@ -41,7 +41,5 @@ function ItemCount ({ stock=5, initial=1 }) {
                 </Row>
             </Container>
         </>
-    )
-}
-
-export default ItemCount;
+    );
+};

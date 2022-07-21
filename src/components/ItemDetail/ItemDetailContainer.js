@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { ItemDetail } from './ItemDetail';
-import ProductsList from '../Products/ProductsList';
+import { data } from '../Products/ProductsList';
 import { useParams } from 'react-router-dom';
 
 export const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
-    const [isLoading, setIsLoading ] = useState(true);
-    const { idItem } = useParams({});
+    // const [isLoading, setIsLoading ] = useState(true);
+    const { iditem } = useParams({});
 
     useEffect ( () => {
-        setIsLoading(true);
+        // setIsLoading(true);
         //Le doy tiempo de 1000ms
         const getItems = new Promise((resolve) => {
             setTimeout(() => {
-                const myData = ProductsList.find((item) => item.id === '3');
+                const myData = data.find((item) => item.id === iditem);
 
                 resolve(myData);
             }, 1000);
@@ -21,9 +21,9 @@ export const ItemDetailContainer = () => {
             
             getItems.then((res) => {
                 setProduct(res);
-                setIsLoading(false);
+                // setIsLoading(false);
             });
     }, []);
 
-    return isLoading ? <h1>Loading...</h1> : <ItemDetail {...product} />;
+    return <ItemDetail {...product} />;
 };

@@ -5,26 +5,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-// import Cards from './components/Items2/ItemList2';
-import NavBarComp from './components/NavBar/NavBarComp';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './components/ItemListContainer/ItemListContainer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProductsList from './components/Products/ProductsList';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Router>
-        <NavBarComp />
-        <ProductsList />
-        <Routes>
-          <Route exact path="/" component={App} />
-          <Route path="/item/:iditem" component={ItemDetailContainer} />
-          <Route path="/category/:idcategoria" component={ItemListContainer}/>
-        </Routes>
-        
-      </Router>  
+    <App />
   </React.StrictMode>
 );
 

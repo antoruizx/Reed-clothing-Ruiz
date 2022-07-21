@@ -1,4 +1,22 @@
-// import React, { Component } from 'react';
+import React from "react";
+import { Item } from "../Item/Item";
+
+
+export const ItemList = ({ items }) => {
+  return (
+    <div className="container-fluid d-flex justify-content-center">
+      <div className="row">
+        <div className="col-md-4">
+            {items?.map((item) => (
+              <Item {...item} key={item.id} />
+            ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// / import React, { Component } from 'react';
 // import Card2 from './CardUI';
 
 // import img1 from '../assets/img/jean.jpg';
@@ -54,19 +72,3 @@
 // };
 
 // export default Cards;
-
-import React from 'react';
-import Card2 from '../Items2/Item2';
-
-const Cards = ({ items }) => {
-    return (
-        <section className="flex-row">
-            {items?.map((item) => (
-                <Card2 {...item} key={item.id} />
-            ))}
-        </section>
-
-    );
-};
-
-export default Cards;

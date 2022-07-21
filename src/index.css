@@ -14,6 +14,7 @@ code {
 a {
   font-weight: 500;
 }
+
 body {
   margin: 0;
 }
@@ -24,7 +25,7 @@ a {
 
 .links {
   display: flex;
-  padding-top: 05em;
+  padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 1rem;
 }
@@ -32,7 +33,7 @@ a {
 .activeClass {
   color: rgb(79,151, 19);
   font-size: 25px;
-  flex-direction: colum;
+  flex-direction: column;
 }
 
 .flex-row {

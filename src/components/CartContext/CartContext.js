@@ -36,7 +36,7 @@ export const CartProvider = ({ defaultValue = [], children }) => {
                         element.quantity = element.quantity + quantity;
                     }
                 }
-                setCart(newCart); 
+                setCart(newCart)
         } else{
             setCart(
                 [
