@@ -37,6 +37,15 @@ export const CartProvider = ({ children }) => {
         });
 
         setCart({ ...cart, addedItems: newAddedItems });
-        
     };
+
+    const clear = () => {
+        setCart (INITIAL_STATE);
+    };
+
+    return (
+        <CartContext.Provider value={{ cart, addItem, clear }}>
+            {children}
+        </CartContext.Provider>
+    );
 };

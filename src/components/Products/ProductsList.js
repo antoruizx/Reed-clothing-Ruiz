@@ -6,15 +6,17 @@ export const data = [
     category: "Remeras",
     image: '/assets/img/remera.jpg',
     description: "Remera rosa unisex",
-    price: 2500,
+    price: 1800,
+    quantity: 100
   },
   {
     id: '2',
-    name: "Remeras Nice basic",
+    name: "Remera Nice basic",
     category: "Remeras",
     image: '/assets/img/remeras.jpg',
-    description: "Pantalon jean oversize unisex",
-    price: 4700,
+    description: "Remeras simples sin perder el estilo",
+    price: 2000,
+    quantity: 70
   },
   {
     id: '3',
@@ -23,69 +25,70 @@ export const data = [
     image: '/assets/img/buzo-blanco.jpg',
     description: "Buzo oversize unisex varios colores",
     price: 3500,
+    quantity: 40
   },
   {
     id: '4',
     name: "Buzo Freedom",
     category: "Abrigos",
     image: '/assets/img/buzo.jpg',
-    description: "Gorro piluso bicolor",
-    price: 1500,
+    description: "Buzo de hilo liviano",
+    price: 2700,
+    quantity: 40
   },
   {
     id: '5',
     name: "Buzo Annie",
     category: "Abrigos",
     image: '/assets/img/buzoannie.jpg',
-    description: "Buzos de hilo mujer",
-    price: 2700,
+    description: "Buzo de algodon hipoalergenico",
+    price: 3100,
+    quantity: 40
   },
   {
     id: '6',
     name: "Camisa New Point",
     category: "Abrigos",
     image: '/assets/img/camisas.jpg',
-    description: "Buzos de hilo mujer",
+    description: "Camisas basicas, varios colores",
     price: 2700,
+    quantity: 20
   },
   {
     id: '7',
     name: "Conjunto Stella",
     category: "Abrigos",
     image: '/assets/img/conjunto.jpg',
-    description: "Buzos de hilo mujer",
-    price: 2700,
+    description: "Conjunto blazer, short y top",
+    price: 8700,
+    quantity: 15
   },
   {
     id: '8',
     name: "Jean Cute Mom",
     category: "Pantalones",
     image: '/assets/img/jean.jpg',
-    description: "Buzos de hilo mujer",
-    price: 2700,
+    description: "Jean recto estilo Mom",
+    price: 4200,
+    quantity: 20
   },
   {
     id: '9',
     name: "Jean Poison",
     category: "Pantalones",
     image: '/assets/img/jeans-2.jpg',
-    description: "Buzos de hilo mujer",
-    price: 2700,
+    description: "Jean tipo slouchy, diferentes tonos",
+    price: 3500,
+    quantity: 20
   },
   {
     id: '10',
     name: "Gafas Tentation",
     category: "Accesorios",
     image: '/assets/img/gafas.jpg',
-    description: "Buzos de hilo mujer",
-    price: 2700,
+    description: "Gafas negras mujer",
+    price: 1400,
+    quantity: 30
   }
 ];
 
-// const ImagenEnPublic = () => {
-//   return (
-//     <>
-//       <h1>Imagen en Public</h1>
-//     </>
-//   )
-// }

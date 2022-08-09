@@ -1,6 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { CartWidget } from "../CartWidget/CartWidget";
+import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
 
 export const Navbar = () => {
@@ -12,11 +11,10 @@ export const Navbar = () => {
   ];
 
   return (
-        <header>
-      <img class="logo" src="/assets/img/Logo2.png" alt="logo" />
-      <nav>
-        <ul class="nav__links">
-            {categories.map((cat) => {
+    <header>
+      <nav >
+        <ul>
+          {categories.map((cat) => {
             return (
                 <NavLink
                   to={cat.address}
@@ -31,8 +29,6 @@ export const Navbar = () => {
           })}
         </ul>
       </nav>
-      <CartWidget/>
     </header>
-    
   );
 };

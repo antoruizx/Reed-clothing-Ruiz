@@ -27,3 +27,4 @@ export const ItemDetailContainer = () => {
 
     return <ItemDetail {...product} />;
 };
+

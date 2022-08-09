@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap";
 import { useCart } from "../CartContext/CartContext";
 import "./card-style.css";
 
-export const Item = ({ id, name, category, image, price }) => {
+export const Item = ({ id, name, image, price, description }) => {
   const cart = useCart();
 
   console.log(cart);
@@ -15,7 +15,7 @@ export const Item = ({ id, name, category, image, price }) => {
   };
   
   return (
-    <Link to={`/item/${id}`}>
+    <Link className="link" to={`/item/${id}`}>
       <div className="card text-center shadow">
         <div className="overflow">
           <img src={image} alt={name} className="card-img-top" />
@@ -23,10 +23,7 @@ export const Item = ({ id, name, category, image, price }) => {
         <div className="card-body text-dark">
           <h4 className="card-title">{name}</h4>
           <h3 className="card-title">${price}</h3>
-          <p className="card-text text-secondary">
-            Categoría: {category}
-          </p>
-          <ItemCount />
+          <p className="card-text text-secondary">{description}</p>
           <Button onClick={addNewProduct} variant="primary" className="btn btn-outline">
             Agregar al carrito
           </Button>

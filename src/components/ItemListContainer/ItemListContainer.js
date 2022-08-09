@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ItemList } from '../ItemList/ItemList';
 import { data } from '../Products/ProductsList';
 import { useParams } from 'react-router-dom';
+import "./ItemListContainer.css";
 
+import { getFirestore } from "firebase/firestore"
 
 export const ItemListContainer = ({ greeting }) => {
     // setIsLoading(true);
