@@ -4,40 +4,27 @@ import { data } from '../Products/ProductsList';
 import { useParams } from 'react-router-dom';
 import "./ItemListContainer.css";
 
-import { getFirestore } from "firebase/firestore"
+import { getFirestore, doc, getDocs, collection, query, where, limit } from "firebase/firestore"
 
-export const ItemListContainer = ({ greeting }) => {
-    // setIsLoading(true);
+
+export function ItemListContainer () {
+
     const [items, setItems] = useState([]);
-    // const [isLoading, setIsLoading]= useState(true);
-    const { idcategoria } = useParams();
 
-    useEffect( () => {
-        // setIsLoading(true);
-        const getItems = new Promise((resolve) => {
-            setTimeout ( () => {
-                const myData = idcategoria  
-                ? data.filter((item) => item.category === idcategoria)
-                : data;
-                
-            resolve(myData); 
-            }, 1000);
-        });
+        useEffect(() => {
+            const db = getFirestore();
 
-        getItems
-            .then((res) => {
-            setItems(res);
-        })
-        // .finally(() => setIsLoading(false));
-    }, [idcategoria]);
-    
-    // return isLoading ? (
-    //     <h1>Cargando...</h1>
-    // ) : (
+            const productsRef = query(collection(db, "products"), limit(20))
+
+            getDocs(productsRef).then((snapshot) => {
+
+                setItems(snapshot.docs.map((doc) => doc.data()))
+            })
+        }, [])
+
         return (
-        <>
-            <h3 style={{ textAlign: 'center' }}>{greeting}</h3>
+        <div className='container'>
             <ItemList items={items} />
-        </>
+        </div>
     );
 };

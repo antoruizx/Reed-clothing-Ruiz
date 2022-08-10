@@ -7,7 +7,6 @@ import { ItemCount } from "../ItemCount/ItemCount";
 export const ItemDetail = ({
   id,
   name,
-  category,
   image,
   description,
   price,
@@ -29,13 +28,6 @@ export const ItemDetail = ({
           <h2>${price}</h2>
           <div>
             <ItemCount />
-            <Button
-              onClick={addNewProduct}
-              variant="primary"
-              className="btn btn-outline"
-            >
-              Agregar al carrito
-            </Button>
           </div>
         </section>
       </div>

@@ -1,0 +1,16 @@
+footer {
+    height: 2.5rem;
+    width: 100%;
+    background-color: black;
+    border-top: 1px solid rgb(22, 81, 117);
+    display: flex;
+    align-items: center;
+
+}
+
+.cierre {
+    color: white;
+    font-family: 'Balsamiq Sans';
+    padding-left: 1rem;
+    text-align: center;
+}

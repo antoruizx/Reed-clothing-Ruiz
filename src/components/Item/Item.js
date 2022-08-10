@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap";
 import { useCart } from "../CartContext/CartContext";
 import "./card-style.css";
 
-export const Item = ({ id, name, image, price, description }) => {
+export const Item = ({ id, name, img, price, description }) => {
   const cart = useCart();
 
   console.log(cart);
@@ -18,7 +18,7 @@ export const Item = ({ id, name, image, price, description }) => {
     <Link className="link" to={`/item/${id}`}>
       <div className="card text-center shadow">
         <div className="overflow">
-          <img src={image} alt={name} className="card-img-top" />
+          <img src={img} alt={name} className="card-img-top" />
         </div>
         <div className="card-body text-dark">
           <h4 className="card-title">{name}</h4>
