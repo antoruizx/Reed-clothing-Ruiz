@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "name": "Remera Electra",
+        "category": "Remeras",
+        "description": "Remera rosa unisex",
+        "price": 1800
+      },
+
+      {
+        "id": 2,
+        "name": "Remera Nice basic",
+        "category": "Remeras",
+        "description": "Remeras simples sin perder el estilo",
+        "price": 2000
+      },
+
+      {
+        "id": 3,
+        "name": "Buzo White Dream",
+        "category": "Abrigos",
+        "description": "Buzo oversize unisex varios colores",
+        "price": 3500
+      }
+]

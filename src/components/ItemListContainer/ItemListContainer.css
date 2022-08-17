@@ -15,3 +15,8 @@
 .container {
     margin: 20px;
 }
+
+.boton-vm {
+    align-items: center;
+    margin-top: 20px;
+}

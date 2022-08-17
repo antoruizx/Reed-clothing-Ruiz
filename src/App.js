@@ -25,6 +25,7 @@ export default function App() {
           />
           <Route path="/item/:iditem" element={<ItemDetailContainer />} />
           <Route path="/login" element={<Login />} />
+          {/* <Route path="/conocenos" element=/> */}
         </Routes>
         <Footer />
       </BrowserRouter>
