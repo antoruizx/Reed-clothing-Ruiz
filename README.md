@@ -6,8 +6,7 @@ Reed es un e-commerce para la venta de ropa y accesorios femeninos, masculinos y
 
 Cuenta con
 
-- registro y login de usuarios: los campos son validados al realizar el registro.
-- filtro por categorías: tomando las categorías de la base de datos se generan filtros de productos.
+- filtro por categorías: tomando las categorías de la base de datos se generan filtros de productos. (me falto conectarlo con el firebase, hice un filtro de categorias en Navbar pero al usar el firebase ya no me servia)
 - carrito: cuenta vista completa de los items del carrito, su total, y la opción de sacar un producto del carrito.
 - vistas de listas de productos: vista general de productos con foto y detalles mínimos.
 - vista de detalles: vista con todos los detalles del producto y la opción de agregar una cantidad del mismo.

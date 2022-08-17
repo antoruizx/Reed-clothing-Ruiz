@@ -19,7 +19,17 @@ export const Header = () => {
                 </ul>
                 <ul>
                     <li>
+                        <Link to="/categorias">Categorias</Link>
+                    </li>    
+                </ul>
+                <ul>
+                    <li>
                         <Link to="/conocenos">Conócenos</Link>
+                    </li>    
+                </ul>
+                <ul>
+                    <li>
+                        <Link to="/login">Iniciar sesión</Link>
                     </li>    
                 </ul>
                 <ul>

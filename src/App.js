@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./components/CartContext/CartContext";
 import { Header } from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Login from "./Pages/Login/Login";
 
 
 export default function App() {
@@ -15,14 +16,15 @@ export default function App() {
     <CartProvider>
       <BrowserRouter>
         <Header />
-        {/* <Navbar /> */}
         <Routes>
+          <Route path="/categorias" element={<Navbar />} />
           <Route path="/" element={<ItemListContainer />} />
           <Route
             path="/category/:idcategoria"
             element={<ItemListContainer />}
           />
           <Route path="/item/:iditem" element={<ItemDetailContainer />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
       </BrowserRouter>
