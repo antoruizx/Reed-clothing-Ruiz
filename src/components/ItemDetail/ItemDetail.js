@@ -1,33 +1,60 @@
-import React from "react";
-import { useCart } from "../CartContext/CartContext";
-import { Button } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+import { useCart, addToCart } from "../CartContext/CartContext";
 import styled from "styled-components";
 import { ItemCount } from "../ItemCount/ItemCount";
+import { CartContext } from "../CartContext/CartContext";
+import { Link } from "react-router-dom";
+
+// export const ItemDetail = ({
+//   id,
+//   name,
+//   image,
+//   description,
+//   price,
+// }) => {
+//   const cart = useCart();
+
+//   console.log(cart);
+
+//   const addNewProduct = () => {
+//     cart.addItem({ name: "Remera Electra", price: 10.0 });
+//   };
 
 export const ItemDetail = ({
-  id,
-  name,
-  image,
-  description,
-  price,
-}) => {
-  const cart = useCart();
+    id,
+    name,
+    image,
+    description,
+    price,
+  }) => {
+  window.scrollTo(0,0)
 
-  console.log(cart);
+  const { addToCart } = useContext(CartContext);
 
-  const addNewProduct = () => {
-    cart.addItem({ name: "Remera Electra", price: 10.0 });
+  const [purchaseCompleted, setPurchaseCompleted] = useState(false);
+
+  const onAdd = (count) => {
+    setPurchaseCompleted(true);
+    // addToCart(props.item, count);
+
   };
+
   return (
     <Container>
       <div className="detail-row">
-        <img src={image} alt={`${id}-${name}`} className="flex-col" />
+        <img src={image} alt={`${id}-${name}`} className="flex-col justify-content-center" />
         <section className="flex-col">
           <h1>{name}</h1>
           <p>{description}</p>
           <h2>${price}</h2>
           <div>
-            <ItemCount />
+            {purchaseCompleted ? (
+              <Link to="/cart" className="addCarrito">
+                Ir a mi carrito
+              </Link>
+            ): (
+              <ItemCount onAdd={onAdd}/>
+            )}
           </div>
         </section>
       </div>

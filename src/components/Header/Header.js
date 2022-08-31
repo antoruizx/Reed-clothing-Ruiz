@@ -34,7 +34,7 @@ export const Header = () => {
                 </ul>
                 <ul>
                     <li>
-                       <CartWidget />
+                        <Link to="/cart"><CartWidget /></Link>
                     </li>    
                 </ul>
             </div>

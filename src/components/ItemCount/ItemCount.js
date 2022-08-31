@@ -1,13 +1,12 @@
 import './ItemCount.css';
 import { useState, useContext, useEffect } from "react";
-import { CartContext } from '../CartContext/CartContext';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 
 
 
 export const ItemCount = ({ onAdd }) => {
     const initial = 1;
-    const stock = 5;
+    const stock = 10;
     const [count, setCount] = useState(initial);
 
     useEffect(() => {
@@ -25,7 +24,7 @@ export const ItemCount = ({ onAdd }) => {
 
     const removeHandler = () => {
         console.log("se esta restando");
-        if (count > 1);
+        if(count > 1) setCount(count - 1);
     };
 
     return (
@@ -58,43 +57,3 @@ export const ItemCount = ({ onAdd }) => {
         </>
     );
 };
-
-// export function ItemCount ({ stock=5, initial=1 }) { 
-//     const [num, setNum] = useState(initial);
-//     const [disableBotonMas, setDisableBotonMas] = useState(false);
-//     const [disableBotonMenos, setDisableBotonMenos] = useState(true);
-
-//     const sumar = () => {
-//         setDisableBotonMenos(false)
-//         if (num === (stock-1)) {
-//             setDisableBotonMas(true)
-//         }
-//         setNum(num + 1 )
-//         // else {
-//         //     alert(`El stock de este producto es de: ${stock} unidades!`)
-//         // }
-//     }
-
-//     const restar = () => {
-//         setDisableBotonMenos(false)
-//         if(num === 1) {
-//             setDisableBotonMenos(true)
-//         }
-//         setNum(num - 1 )
-//     }
-
-//     return (
-//         <>
-//             <Container fluid>
-//                 <Row xs="auto" md="auto" className="rounded-3 justify-content-center">
-//                     <>
-//                     <Col><Button variant="outline-primary" size="sm" onClick={restar} disabled={disableBotonMenos}> - </Button></Col>
-//                     <Col><p className="ItemCount">{num}</p></Col>
-//                     <Col><Button variant="outline-primary" size="sm" onClick={sumar} disabled={disableBotonMas}> + </Button></Col>
-//                     </>
-                    
-//                 </Row>
-//             </Container>
-//         </>
-//     );
-// };

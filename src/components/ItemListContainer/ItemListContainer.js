@@ -19,33 +19,7 @@ import {
 
 export function ItemListContainer() {
   const [items, setItems] = useState([]);
-  const[nuevoProducto, setNuevoProducto] = useState([]);
-
-//   const newProducts = () => {
-//     const product = {
-//       description: "Una descipcion",
-//       price: "Un precio",
-//       id: 3,
-//       name: "Un nombre",
-//     }
-
-//     const db = getFirestore()
-
-    // const batch = writeBatch(db)
-    // const product = doc(db, "products", "codigoID")
-    // const product2 = doc(db, "products", "codigoID2")
-
-    // batch.update(product, { price: 2000 })
-    // batch.set(product2, { id: "3"})
-
-    // batch.commit()
-
-    // const productsCollection = collection(db, "products")
-
-    // addDoc(productsCollection, product).then(({ id }) => console.log(id))
-    
-    // updateDoc(product, { price: 2700 })
-// }
+  const [nuevoProducto, setNuevoProducto] = useState([]);
 
     const newProducts = () => {
         fetch('data.json')
@@ -64,7 +38,7 @@ export function ItemListContainer() {
   useEffect(() => {
     const db = getFirestore();
 
-    const productsRef = query(collection(db, "products"), limit(20));
+    const productsRef = query(collection(db, "products"));
 
     getDocs(productsRef).then((snapshot) => {
       setItems(snapshot.docs.map((doc) => doc.data()));

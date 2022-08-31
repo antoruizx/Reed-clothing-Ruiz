@@ -1,5 +1,5 @@
 
-import { createContext, useState, useContext} from "react";
+import { createContext, useState, useContext } from "react";
 
 /*
 
@@ -12,81 +12,92 @@ import { createContext, useState, useContext} from "react";
     6- Arrmar las funciones necesarias para el carrito
 */
 
-export const CartContext = createContext();
+export const CartContext = createContext ({})
 
-export const useCart = () => useContext(CartContext);
+const {Provider} = CartContext
 
-const INITIAL_STATE = {
-    addedItems: [{ name: "Remera Electra", quantity: 1 }],
-    totalPrice: 0
-};
-
-export const { Provider } = CartContext 
-    const Carrito = [
-        {
-            item: {
-                name: "ropa",
-                price: "$1000"
-            },
-            quantity: 20
-        },
-        {
-            item: {
-                name: "ropa",
-                price: "$1000"
-            },
-            quantity: 20
-        },
-        {
-            item: {
-                name: "ropa",
-                price: "$1000"
-            },
-            quantity: 20
-        },
-        {
-            item: {
-                name: "ropa",
-                price: "$1000"
-            },
-            quantity: 20
-        },
-        {
-            item: {
-                name: "ropa",
-                price: "$1000"
-            },
-            quantity: 20
-        }
-    ]
-
+// const ejemploCarrito = [
+//     {
+//         item: {
+//             name: 'ropa',
+//             precio: '$1000'
+//             id: 1
+//         },
+//         quantity: 5
+//     },
+//     {
+//         item: {
+//             name: 'ropa',
+//             precio: '$1000'
+//             id: 2
+//         },
+//         quantity: 5
+//     }
+// ]
 
 export const CartProvider = ({ defaultValue = [], children }) => {
     const [cart, setCart] = useState(defaultValue);
-
+    
     const clearCart = () => {
         setCart([]);
     }
 
     const addToCart = (item, quantity) => {
-        setCart(
-            [
-                ...cart,
-                {
-                    item: item,
-                    quantity: quantity
+        console.log(item)
+        if(isInCart(item.id)) {//verificar si el producto existe en el carrito
+            const newCart = [...cart] //hacemos copia del carrito con spread operator
+            for(const element of newCart) {// busca que producto del carrito coincide con el producto qu estoy agregando
+                if(element.item.id === item.id) {
+                    element.quantity = element.quantity + quantity; // cuando se encuenta, le sumamos la cantidad
                 }
-            ]
-        )
+            }
+            setCart(newCart);
+        } else {
+            setCart(
+                [
+                    ...cart,
+                    {
+                        item: item,
+                        quantity: quantity
+                    }
+                ]
+            )
+        }
+    }
+    const isInCart = (id) => {
+        return cart.find((element) => element.item.id === id)
     }
 
-    const context = {
-        clearCart,
-        addToCart
+    const removeFromCart = (id) => {
+        const newCart = [...cart].filter(element => element.item.id !== id);
+        setCart(newCart);
     }
-    
+
+    // const getQuantity = () => {
+    // let cantidad = 0
+    // cart.forEach((element) => cantidad = cantidad + element.quantity)
+    //  return cantidad
+    // }
+
+    // const getTotal = () => {
+    // let total = 0
+    // cart.forEach((element) => {
+    //  total = total + (element.quantity * element.item.price)
+    //})
+    // return total
+    //}
+
+    const context = {
+        cart,
+        clearCart,
+        addToCart,
+        removeFromCart
+        //getQuantity,
+        //getTotal
+    }
+
     return (
-        <Provider value= {context}>
+        <Provider value={context}>
             {children}
         </Provider>
     )
@@ -94,118 +105,92 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 
 
 
-//////////////////////////////////////////////////////////////
-// import React, {createContext, useState} from 'react';
-// import getFirestore from '../FirebaseSettings';
-// import firebase from "firebase/app";
-
-// const CartContext = createContext();
-
-// function CartContextProvider({children}){
-
-//     //Llamado al Context de productos: 
-//     const [products, setProducts] = useState([]);
-
-//     //Elementos del comprador de la orden: 
-//     const [name, setName] = useState("");
-//     const [email, setEmail] = useState("");
-//     const [confirmEmail, setConfirmEmail] = useState("");
-//     const [phone, setPhone] = useState("");
-//     const [compra,setCompra] = useState("");
-
-//     //Funciones del Carrito de Compras 
 
 
-//     //Agregar productos al carrito de compras: 
 
-//     const addProduct = (datos, number) => {
-    
-//     const existing = products.find((p) => p.id === datos.id);
 
-//     if (existing) {
-//         // Sumo al existente
-//         existing.number += number;
-//         // Crea un array nuevo
-//         } else {
-//         setProducts([...products, { ...datos, number }]);    
+
+
+
+
+
+// export const CartContext = createContext();
+
+// export const useCart = () => useContext(CartContext);
+
+// const INITIAL_STATE = {
+//     addedItems: [{ name: "Remera Electra", quantity: 1 }],
+//     totalPrice: 0
+// };
+
+// export const { Provider } = CartContext 
+//     const Carrito = [
+//         {
+//             item: {
+//                 name: "ropa",
+//                 price: "$1000"
+//             },
+//             quantity: 20
+//         },
+//         {
+//             item: {
+//                 name: "ropa",
+//                 price: "$1000"
+//             },
+//             quantity: 20
+//         },
+//         {
+//             item: {
+//                 name: "ropa",
+//                 price: "$1000"
+//             },
+//             quantity: 20
+//         },
+//         {
+//             item: {
+//                 name: "ropa",
+//                 price: "$1000"
+//             },
+//             quantity: 20
+//         },
+//         {
+//             item: {
+//                 name: "ropa",
+//                 price: "$1000"
+//             },
+//             quantity: 20
 //         }
-//     };
+//     ]
 
-//     //Borrar productos del carrito al hacer click en "X"
 
-//     const delProduct = (id) => {
-//         products.splice(
-//         products.findIndex((p) => p.id === id),
-//         1
-//         );
-//         setProducts([...products]);
-//     };
+// export const CartProvider = ({ defaultValue = [], children }) => {
+//     const [cart, setCart] = useState(defaultValue);
 
 //     const clearCart = () => {
-//         setProducts([]);
+//         setCart([]);
 //     }
 
-//     //Suma de total de productos y costo total
-
-//     const productsCount = () => {
-//         return products.reduce((total, p) => (total += p.number), 0);
-//     };
-    
-//     const getGrandTotal = () => {
-//         return products.reduce((total , p) => (total += p.price * p.number), 0);
-//     };
-
-//     //Funciones para armar órdenes de compra en Firebase
-
-//     const manejarCompra = (e) => {
-//         e.preventDefault();
-
-//         const date = firebase.firestore.Timestamp.fromDate(new Date())
-
-//         const buyerData = {
-//             buyer : {
-//                 name, 
-//                 phone, 
-//                 email, 
-//                 confirmEmail
-//             }, 
-
-//             items: products, 
-//             date: date.toDate(),
-//             total: getGrandTotal()
-//         }
-
-//         setCompra(buyerData);
-
-//         const db = getFirestore();
-//         const OrderCollection = db.collection("orders");
-//         OrderCollection.add(buyerData)
-
-//         .then((res) => {
-//             OrderCollection.doc(res.id)
-//             .get()
-            
-//             .then((querySnapshot) =>{
-//                 if(!querySnapshot.exists){
-//                     console.log("No existe")
-//                 } else {
-//                     setCompra({
-//                         id: querySnapshot.id, 
-//                         ...querySnapshot.data()
-//                     })
+//     const addToCart = (item, quantity) => {
+//         setCart(
+//             [
+//                 ...cart,
+//                 {
+//                     item: item,
+//                     quantity: quantity
 //                 }
-//             })
-//             .catch(error => console.log(error))
-//         })
+//             ]
+//         )
 //     }
 
-//     return(
-//         <CartContext.Provider value={{ products, addProduct, delProduct, clearCart, productsCount, getGrandTotal, setName, name, setPhone, phone, email, setEmail, setConfirmEmail, confirmEmail, manejarCompra, compra }}>
+//     const context = {
+//         clearCart,
+//         addToCart
+//     }
+    
+//     return (
+//         <Provider value= {context}>
 //             {children}
-//         </CartContext.Provider>
+//         </Provider>
 //     )
-
 // }
 
-// export default CartContext;
-// export {CartContextProvider};

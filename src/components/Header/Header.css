@@ -20,6 +20,7 @@
 
 .header-links {
     display: flex;
+    align-items: center;
 }
 
 .header-links ul li {
@@ -32,7 +33,7 @@
     text-decoration: none;
     text-transform: uppercase;
     color: white;
-    padding: 0px 15px;
+    padding: 0px 17px;
 }
 
 .header-links ul li a:hover {

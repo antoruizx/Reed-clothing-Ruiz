@@ -9,6 +9,7 @@ import { CartProvider } from "./components/CartContext/CartContext";
 import { Header } from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Login from "./Pages/Login/Login";
+import { CartView } from "./components/CartView/CartView";
 
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
           />
           <Route path="/item/:iditem" element={<ItemDetailContainer />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/cart" element={<CartView />} />
           {/* <Route path="/conocenos" element=/> */}
         </Routes>
         <Footer />
